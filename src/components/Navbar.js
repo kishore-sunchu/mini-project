@@ -1,14 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import logo  from "../photos/logo-without-background.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav className="flex items-center justify-between flex-wrap p-4 bg-gray-100">
+      <nav className="flex items-center justify-between flex-wrap p-3 bg-slate-50 font-serif">
         <div className="flex items-center flex-shrink-0 mr-6 w-1/2 lg:mr-72 text-black">
-            <div  className="w-100 h-10 mr-2">logo</div>
+          <div className="w-100 h-14 mr-2">
+            <img src={logo} alt="logo" className="mix-blend-mode: screen h-full" />
+          </div>
         </div>
         <div className="block lg:hidden">
           <button
@@ -32,7 +35,7 @@ export default function Navbar() {
           className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${
             isOpen ? "block" : "hidden"
           }`}>
-          <div className="text-base lg:flex-grow lg:flex lg:justify-evenly">
+          <div className="lg:flex-grow lg:flex lg:justify-evenly text-lg">
             <Link
               to="/"
               className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
@@ -49,9 +52,9 @@ export default function Navbar() {
               Log in
             </Link>
             <Link
-              to="/"
+              to="/signup"
               className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-              Sign in
+              Sign Up
             </Link>
           </div>
         </div>
